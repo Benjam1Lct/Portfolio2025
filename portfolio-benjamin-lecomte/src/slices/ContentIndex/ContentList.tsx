@@ -26,7 +26,7 @@ export default function ContentList({
 
     const component = useRef(null)
     const revealRef = useRef(null)
-    const itemsRef = useRef<Array<HTMLLIElement | null>>([])
+    const itemsRef = useRef<Array<HTMLLIElement | null>>([]);
 
     const [currentItem, setCurrentItem] = useState<null | number>(null)
 
@@ -132,7 +132,10 @@ export default function ContentList({
                             key={index} 
                             className="list-item opacity-0"
                             onMouseEnter={() => onMouseEnter(index)}
-                            ref={(el) => (itemsRef.current[index] = el)}
+                            ref={(el) => {
+                                itemsRef.current[index] = el;
+                              }}
+                              
                         >
                             <Link 
                             href={urlPrefixes + "/" + item.uid} 

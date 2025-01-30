@@ -1,3 +1,4 @@
+import { KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
 import { MdArrowOutward } from "react-icons/md";

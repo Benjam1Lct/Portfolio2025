@@ -1,0 +1,23 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"link": {
+				"key": "ec588cfc-83c4-4c21-a972-6274d2981f9e",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "cast"
+				}
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "quarter",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

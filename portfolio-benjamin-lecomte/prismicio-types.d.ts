@@ -233,7 +233,10 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ProjectDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
+type ProjectDocumentDataSlicesSlice =
+  | ExternalLinkSlice
+  | ImageBlockSlice
+  | TextBlockSlice;
 
 /**
  * Content for Project documents
@@ -795,6 +798,61 @@ export type ExperienceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ExternalLink → Default → Primary*
+ */
+export interface ExternalLinkSliceDefaultPrimary {
+  /**
+   * Title field in *ExternalLink → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: external_link.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Link field in *ExternalLink → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: external_link.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for ExternalLink Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExternalLinkSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ExternalLinkSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ExternalLink*
+ */
+type ExternalLinkSliceVariation = ExternalLinkSliceDefault;
+
+/**
+ * ExternalLink Shared Slice
+ *
+ * - **API ID**: `external_link`
+ * - **Description**: ExternalLink
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExternalLinkSlice = prismic.SharedSlice<
+  "external_link",
+  ExternalLinkSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -1078,6 +1136,10 @@ declare module "@prismicio/client" {
       ExperienceSliceDefaultPrimary,
       ExperienceSliceVariation,
       ExperienceSliceDefault,
+      ExternalLinkSlice,
+      ExternalLinkSliceDefaultPrimary,
+      ExternalLinkSliceVariation,
+      ExternalLinkSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

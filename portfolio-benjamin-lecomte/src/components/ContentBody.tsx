@@ -35,15 +35,15 @@ export default async function ContentBody({page}: {
                 <Heading as="h1">
                     {page.data.title}
                 </Heading>
-                <div className="flex gap-4 text-yellow-400 text-xl font-bold">
+                <div className="flex gap-4 mt-6 text-yellow-400 text-xl font-bold">
                     {page.tags.map((tag) =>(
                         <span key={tag}>{tag}</span>
                     ))}
                 </div>
-                <p className="mt-8 border-b border-slate-600 text-xl font-medium text-slate-300">
+                <p className="py-4 border-b border-slate-600 text-xl font-medium text-slate-300">
                     {formattedDate}
                 </p>
-                <div className="prose prose-lg prose-invert mt-12 w-full max-w-none md:mt-20">
+                <div className="prose prose-lg prose-invert mt-8 w-full max-w-none md:mt-12">
                     <SliceZone slices={page.data.slices} components={components} />
                 </div>
             </div>

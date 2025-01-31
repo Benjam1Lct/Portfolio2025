@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import clsx from "clsx";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName, createClient } from "@/prismicio";
+import { useEffect } from "react";
+import ToggleTheme from "@/components/toggleTheme";
 
 const urbanist = Urbanist({subsets: ['latin']})
 
@@ -24,12 +26,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en" className="bg-slate-900 text-slate-100">
+    <html lang="en" className="dark:bg-slate-900 bg-[#EDE7DD]  dark:text-slate-100 text-slate-900">
       <body
         className={clsx(urbanist.className, "relative min-h-screen")}
       >
         <Header/>
+        <ToggleTheme></ToggleTheme>
         {children}
         <Footer/>
         <div className="absolute -z-50 inset-0 max-h-screen background-gradient"></div>

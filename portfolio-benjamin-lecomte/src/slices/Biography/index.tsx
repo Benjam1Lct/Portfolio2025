@@ -21,10 +21,10 @@ const Biography: FC<BiographyProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
     >
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-[2fr, 2fr]">
-        <Heading as="h1" size="xl" className="col-start-1">
+        <Heading as="h1" size="xl" className="col-start-1 dark:text-slate-200 text-slate-950">
           {slice.primary.heading}
         </Heading>
-        <div className="prose prose-xl prose-slate prose-invert col-start-1">
+        <div className="prose prose-xl prose-slate prose-invert col-start-1 text-slate-800 dark:text-slate-300 prose-strong:text-slate-900 dark:prose-strong:text-slate-100">
           <PrismicRichText field={slice.primary.description}></PrismicRichText>
         </div>
         <Button linkField={slice.primary.button_link} label={slice.primary.button_text}></Button>

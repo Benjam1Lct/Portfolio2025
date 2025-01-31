@@ -67,7 +67,7 @@ const TechList: FC<TechListProps> = ({ slice }) => {
       ref={component}
     >
       <Bounded as="div">
-        <Heading size="xl" className="mb-8" as="h2">
+        <Heading size="xl" className="mb-8 dark:text-slate-100 text-slate-950" as="h2">
           {slice.primary.heading}
         </Heading>
       </Bounded>
@@ -75,7 +75,7 @@ const TechList: FC<TechListProps> = ({ slice }) => {
       {slice.primary.repeatable_zone.map((item, index) => (
         <div 
           key={index} 
-          className="tech-row mb-8 flex items-center justify-center gap-4 text-slate-700"
+          className="tech-row mb-8 flex items-center justify-center gap-4 dark:text-slate-700 text-slate-300"
           aria-label={item.tech_name || undefined}
         >
           {Array.from({length: 15} , (_, index) => (

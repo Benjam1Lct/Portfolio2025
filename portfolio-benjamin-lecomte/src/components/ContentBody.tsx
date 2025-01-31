@@ -31,19 +31,19 @@ export default async function ContentBody({page}: {
     return (
         <Bounded as="article">
 
-            <div className="rounded-2xl border-2 border-slate-800 bg-slate-900 px-4 py-10 md:px-8 md:py-20">
+            <div className="rounded-2xl border-2 dark:border-slate-700 border-slate-900 dark:bg-slate-900 bg-slate-50 px-4 py-10 md:px-8 md:py-20">
                 <Heading as="h1">
                     {page.data.title}
                 </Heading>
-                <div className="flex gap-4 mt-6 text-yellow-400 text-xl font-bold">
+                <div className="flex gap-4 mt-6 dark:text-yellow-400 text-green-600 text-xl font-bold">
                     {page.tags.map((tag) =>(
                         <span key={tag}>{tag}</span>
                     ))}
                 </div>
-                <p className="py-4 border-b border-slate-600 text-xl font-medium text-slate-300">
+                <p className="py-4 border-b dark:border-slate-600 border-slate-500 text-xl font-medium dark:text-slate-300 text-slate-600">
                     {formattedDate}
                 </p>
-                <div className="prose prose-lg prose-invert mt-8 w-full max-w-none md:mt-12">
+                <div className="prose prose-lg prose-invert mt-8 w-full max-w-none md:mt-12 dark:text-slate-300 dark:prose-strong:text-slate-50 dark:prose-headings:text-slate-50 text-slate-700 prose-strong:text-slate-950 prose-headings:text-slate-950">
                     <SliceZone slices={page.data.slices} components={components} />
                 </div>
             </div>

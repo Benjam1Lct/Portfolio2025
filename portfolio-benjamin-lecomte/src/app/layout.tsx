@@ -36,7 +36,7 @@ export default function RootLayout({
         <ToggleTheme></ToggleTheme>
         {children}
         <Footer/>
-        <div className="absolute -z-50 inset-0 max-h-screen background-gradient"></div>
+        <div className="absolute -z-50 inset-0 max-h-screen dark:background-gradient background-gradient2"></div>
         <div className="absolute pointer-events-none inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
       </body>
       <PrismicPreview repositoryName={repositoryName}/>

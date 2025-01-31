@@ -122,7 +122,7 @@ export default function ContentList({
     return (
         <div ref={component}>
             <ul
-            className="grid border-b border-b-slate-100"
+            className="grid border-b dark:border-b-slate-100 border-b-slate-500"
             onMouseLeave={onMouseLeave}
             >
                 {items.map((item, index) => (
@@ -139,12 +139,12 @@ export default function ContentList({
                         >
                             <Link 
                             href={urlPrefixes + "/" + item.uid} 
-                            className="flex flex-col justify-between border-t border-t-slate-100 py-10 text-slate-200 md:flex-row"
+                            className="flex flex-col justify-between border-t dark:border-t-slate-100 border-t-slate-500 py-10 dark:text-slate-200 text-slate-700 md:flex-row"
                             area-label={item.data.title}
                             >
                                 <div className="flex flex-col">
                                     <span className="text-3xl font-bold">{item.data.title}</span>
-                                    <div className="flex gap-3 text-yellow-400 text-lg font-bold">
+                                    <div className="flex gap-3 dark:text-yellow-400 text-green-600 text-lg font-bold">
                                         {item.tags.map((tag, index)=>(
                                             <span key={index}>{tag}</span>
                                         ))}

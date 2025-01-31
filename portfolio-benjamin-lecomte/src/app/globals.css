@@ -10,3 +10,13 @@
       hsla(222, 0%, 0%, 0) 100%
     );
   }
+
+
+.background-gradient2 {
+  background: radial-gradient(
+    circle at top center,
+    hsla(0, 0%, 0%, 0.15) 0%,
+    hsla(222, 0%, 0%, 0) 50%,
+    hsla(222, 0%, 0%, 0) 100%
+  );
+}

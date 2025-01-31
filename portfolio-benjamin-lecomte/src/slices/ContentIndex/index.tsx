@@ -34,7 +34,7 @@ const ContentIndex: FC<ContentIndexProps> = async ({ slice }) => {
       </Heading>
 
       {isFilled.richText(slice.primary.description) && (
-        <div className="prose prose-xl prose-invert mb-10">
+        <div className="prose prose-xl prose-invert mb-10 dark:text-slate-300 text-slate-800 ">
           <PrismicRichText field={slice.primary.description}/>
         </div>
       )}

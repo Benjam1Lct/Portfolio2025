@@ -75,7 +75,7 @@ const TechList: FC<TechListProps> = ({ slice }) => {
       {slice.primary.repeatable_zone.map((item, index) => (
         <div 
           key={index} 
-          className="tech-row mb-8 flex items-center justify-center gap-4 dark:text-slate-700 text-slate-300"
+          className="tech-row mb-8 flex items-center justify-center gap-4 text-gray-300"
           aria-label={item.tech_name || undefined}
         >
           {Array.from({length: 15} , (_, index) => (

@@ -27,7 +27,7 @@ const Biography: FC<BiographyProps> = ({ slice }) => {
         <div className="prose prose-xl prose-slate prose-invert col-start-1 text-slate-800 dark:text-slate-300 prose-strong:text-slate-900 dark:prose-strong:text-slate-100">
           <PrismicRichText field={slice.primary.description}></PrismicRichText>
         </div>
-        <Button linkField={slice.primary.button_link} label={slice.primary.button_text}></Button>
+        <Button linkField={slice.primary.button_link} label={slice.primary.button_text} className="scale-[1.2] translate-x-3"></Button>
       
         <Avatar image={slice.primary.avatar} className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"/>
       </div>

@@ -52,18 +52,18 @@ function Geometries() {
     
     const materials = [
         new THREE.MeshNormalMaterial(),
-        new THREE.MeshStandardMaterial({color: 0x27ae60, roughness: 0}),
-        new THREE.MeshStandardMaterial({color: 0xe67e22, roughness: 0.4}),
-        new THREE.MeshStandardMaterial({color: 0x8e44ad, roughness: 0.1}),
-        new THREE.MeshStandardMaterial({color: 0xf1c40f, roughness: 0.1}),
-        new THREE.MeshStandardMaterial({color: 0xe74c3c, roughness: 0.1}),
+        new THREE.MeshStandardMaterial({color: 0xF2A0B6, roughness: 0}),
+        new THREE.MeshStandardMaterial({color: 0x040FD9, roughness: 0.4}),
+        new THREE.MeshStandardMaterial({color: 0x5058F2, roughness: 0.1}),
+        new THREE.MeshStandardMaterial({color: 0xFF5722, roughness: 0.1}),
+        new THREE.MeshStandardMaterial({color: 0xF2C48D, roughness: 0.1}),
         new THREE.MeshStandardMaterial({
-            color: 0x2980b9, 
+            color: 0x6387F2, 
             roughness: 0,
             metalness: 0.5,
         }),
         new THREE.MeshStandardMaterial({
-            color: 0x2c3e50, 
+            color: 0x22FFFF, 
             roughness: 0.1,
             metalness: 0.5,
         }),

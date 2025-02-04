@@ -8,6 +8,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName, createClient } from "@/prismicio";
 import ToggleTheme from "@/components/toggleTheme";
 import { Analytics } from "@vercel/analytics/react";
+import GradientEffect from "@/components/GradientEffect";
 
 const urbanist = Urbanist({subsets: ['latin']})
 
@@ -28,16 +29,14 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className="dark:bg-slate-900 bg-[#EDE7DD]  dark:text-slate-100 text-slate-900">
+    <html lang="en" className="bg-black dark:text-slate-100 text-slate-900 m-0 p-0">
       <body
-        className={clsx(urbanist.className, "relative min-h-screen")}
+        className={clsx(urbanist.className, "absolute min-h-screen w-full")}
       >
         <Header/>
-        <ToggleTheme></ToggleTheme>
         {children}
         <Footer/>
-        <div className="absolute -z-50 inset-0 max-h-screen dark:background-gradient background-gradient2"></div>
-        <div className="absolute pointer-events-none inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
+        <GradientEffect/>
       </body>
       <PrismicPreview repositoryName={repositoryName}/>
       <Analytics/>

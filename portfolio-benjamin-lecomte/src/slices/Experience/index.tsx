@@ -16,8 +16,9 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="pl-14"
     >
-      <Heading as="h2" size="lg" className="dark:text-slate-100 text-slate-950">
+      <Heading as="h2" size="lg" className="dark:text-slate-100 text-slate-950 mt-24">
         {slice.primary.heading}
       </Heading>
       {slice.primary.repeatable_zone.map((item, index) => (
@@ -26,12 +27,12 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
             {item.title}
           </Heading>
 
-          <div className="mt-1 flex w-fit items-center gap-1 text-2xl font-semibold tracking-tight dark:text-slate-400 text-slate-700">
+          <div className="mt-1 flex w-fit items-center gap-1 text-2xl font-semibold tracking-tight text-gray-200">
             <span>{item.time_period}</span>{" "}
             <span className="text-3xl font-extralight">/</span>{" "}
             <span>{item.institution}</span>
           </div>
-          <div className="prose prose-lg prose-invert mt-4 dark:text-slate-400 text-slate-700">
+          <div className="prose prose-lg prose-invert mt-4 text-gray-50">
             <PrismicRichText field={item.description} />
           </div>
         </div>

@@ -28,6 +28,7 @@ const ContentIndex: FC<ContentIndexProps> = async ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="mt-24"
     >
       <Heading size="xl" className="mb-8">
         {slice.primary.heading}

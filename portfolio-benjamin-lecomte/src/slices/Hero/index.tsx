@@ -77,7 +77,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
         <Shapes></Shapes>
         <div className="col-start-1 md:row-start-1">
-          <h1 className="mb-8 text-[clamp(3rem,12vmin,12rem)] font-extrabold leading-none tracking-tighter" aria-label={slice.primary.first_name + " " + slice.primary.last_name}>
+          <h1 className="mb-8 text-[calc(2rem+5vw)] font-extrabold leading-none tracking-tighter" aria-label={slice.primary.first_name + " " + slice.primary.last_name}>
             <span className="block text-gray-50">{renderLetters(slice.primary.first_name, "first")}</span>
             <span className="-mt-[.2em] block text-gray-50">{renderLetters(slice.primary.last_name, "last")}</span>
           </h1>

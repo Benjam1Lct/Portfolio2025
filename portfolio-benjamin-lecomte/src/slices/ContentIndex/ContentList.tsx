@@ -136,7 +136,7 @@ export default function ContentList({
 
 
     return (
-        <div ref={component}>
+        <div ref={component} className="">
             <ul
             className="grid border-b border-b-slate-100 "
             onMouseLeave={onMouseLeave}

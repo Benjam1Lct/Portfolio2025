@@ -29,7 +29,7 @@ export default async function ContentBody({page}: {
     
 
     return (
-        <Bounded as="article">
+        <Bounded as="article" className="mt-24">
 
             <div className="rounded-2xl bg-black/75 px-4 py-10 md:px-8 md:py-12 z-1000 border-2 border-slate-600">
                 <div className="relative rounded max-w-fit">

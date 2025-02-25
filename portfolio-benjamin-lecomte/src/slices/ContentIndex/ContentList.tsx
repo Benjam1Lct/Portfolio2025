@@ -119,10 +119,26 @@ export default function ContentList({
         setCurrentItem(null)
     }
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+          setIsMobile(window.innerWidth <= 768); // Détection mobile (<= 768px)
+        };
+    
+        checkScreenSize();
+        window.addEventListener("resize", checkScreenSize);
+    
+        return () => {
+          window.removeEventListener("resize", checkScreenSize);
+        };
+      }, []);
+
+
     return (
         <div ref={component}>
             <ul
-            className="grid border-b dark:border-b-slate-100 border-b-slate-500"
+            className="grid border-b border-b-slate-100 "
             onMouseLeave={onMouseLeave}
             >
                 {items.map((item, index) => (
@@ -139,18 +155,21 @@ export default function ContentList({
                         >
                             <Link 
                             href={urlPrefixes + "/" + item.uid} 
-                            className="flex flex-col justify-between border-t dark:border-t-slate-100 border-t-slate-500 py-10 dark:text-slate-200 text-slate-700 md:flex-row"
+                            className="flex flex-row justify-between border-t border-t-slate-100  py-10 text-slate-200  "
                             area-label={item.data.title}
                             >
                                 <div className="flex flex-col">
                                     <span className="text-3xl font-bold">{item.data.title}</span>
-                                    <div className="flex gap-3 text-[#F2A0B6] text-lg font-bold">
-                                        {item.tags.map((tag, index)=>(
+                                    <div className="flex gap-3 text-black text-lg font-bold bg-white px-4 mt-4 rounded w-fit">
+                                        {item.tags.slice(0, isMobile ? 2 : item.tags.length).map((tag, idx) => (
                                             <span key={index}>{tag}</span>
                                         ))}
                                     </div>
                                 </div>
-                                <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0">{viewMoreText} <MdArrowOutward/></span>
+                                <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0 ">  
+                                    <span className="hidden md:inline">{viewMoreText}</span>
+                                    <MdArrowOutward/>
+                                </span>
                             </Link>
                         </li>
                     )}

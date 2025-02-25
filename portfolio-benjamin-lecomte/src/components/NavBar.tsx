@@ -19,13 +19,13 @@ export default function NavBar({
 
   return (
     <nav aria-label="Main navigation">
-      <ul className="flex flex-col justify-between rounded-b-lg dark:bg-slate-50 bg-slate-950 px-4 py-2 md:m-4 md:flex-row md:items-center md:rounded-xl">
+      <ul className="flex flex-col justify-between rounded-b-lg bg-slate-50 px-4 py-2 md:m-4 md:flex-row md:items-center md:rounded-xl">
         <div className="flex items-center justify-between">
           <NameLogo name={settings.data.name} />
           <button
             aria-expanded={open}
             aria-label="Open menu"
-            className="block p-2 text-2xl dark:text-slate-800 text-slate-50 md:hidden"
+            className="block p-2 text-2xl text-slate-800  md:hidden"
             onClick={() => setOpen(true)}
           >
             <MdMenu />
@@ -33,14 +33,14 @@ export default function NavBar({
         </div>
         <div
           className={clsx(
-            "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-col items-end gap-4 dark:bg-slate-50 bg-slate-950 pr-4 pt-14 transition-transform duration-300 ease-in-out md:hidden",
+            "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-col items-end gap-4 bg-slate-50  pr-4 pt-14 transition-transform duration-300 ease-in-out md:hidden",
             open ? "translate-x-0" : "translate-x-[100%]",
           )}
         >
           <button
             aria-label="Close menu"
             aria-expanded={open}
-            className="fixed right-4 top-3 block p-2 text-2xl dark:text-slate-800 text-slate-50 md:hidden "
+            className="fixed right-4 top-3 block p-2 text-2xl text-slate-800 md:hidden "
             onClick={() => setOpen(false)}
           >
             <MdClose />
@@ -50,7 +50,7 @@ export default function NavBar({
               <li className="first:mt-8">
                 <PrismicNextLink
                   className={clsx(
-                    "group relative block overflow-hidden rounded px-3 text-3xl font-bold dark:text-slate-900 text-slate-50 ",
+                    "group relative block overflow-hidden rounded px-3 text-3xl font-bold text-slate-900  ",
                   )}
                   field={link}
                   onClick={() => setOpen(false)}
@@ -73,7 +73,7 @@ export default function NavBar({
               </li>
               {index < settings.data.nav_item.length - 1 && (
                 <span
-                  className="hidden text-4xl font-thin leading-[0] dark:text-slate-400 text-slate-300 md:inline"
+                  className="hidden text-4xl font-thin leading-[0] text-slate-400  md:inline"
                   aria-hidden="true"
                 >
                   /
@@ -100,7 +100,7 @@ function NameLogo({ name }: { name: KeyTextField }) {
     <Link
       href="/"
       aria-label="Home page"
-      className="text-xl font-extrabold tracking-tighter dark:text-slate-900 text-slate-50"
+      className="text-xl font-extrabold tracking-tighter text-slate-900"
     >
       {name}
     </Link>
@@ -121,7 +121,7 @@ function DesktopMenu({
           <li>
             <PrismicNextLink
               className={clsx(
-                "group relative block overflow-hidden rounded px-3 py-1 text-base font-bold dark:text-slate-900 text-slate-50",
+                "group relative block overflow-hidden rounded px-3 py-1 text-base font-bold text-slate-900 ",
               )}
               field={link}
               aria-current={
@@ -141,7 +141,7 @@ function DesktopMenu({
           </li>
           {index < settings.data.nav_item.length - 1 && (
             <span
-              className="hidden text-4xl font-thin leading-[0] dark:text-slate-400 text-slate-300 md:inline"
+              className="hidden text-4xl font-thin leading-[0] text-slate-400  md:inline"
               aria-hidden="true"
             >
               /

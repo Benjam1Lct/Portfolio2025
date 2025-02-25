@@ -192,3 +192,18 @@
 
   opacity: 0.7;
 }
+
+/* Masquer la scrollbar sur Chrome, Safari */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Masquer la scrollbar sur Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+/* Masquer la scrollbar sur Edge */
+.scrollbar-hide::-ms-scrollbar {
+  display: none;
+}

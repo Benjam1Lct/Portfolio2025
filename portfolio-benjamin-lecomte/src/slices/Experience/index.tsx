@@ -18,12 +18,12 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="pl-14"
     >
-      <Heading as="h2" size="lg" className="dark:text-slate-100 text-slate-950 mt-24">
+      <Heading as="h2" size="lg" className="text-slate-100  mt-24">
         {slice.primary.heading}
       </Heading>
       {slice.primary.repeatable_zone.map((item, index) => (
         <div key={index} className="ml-6 mt-8 max-w-prose md:ml-12 md:mt-16">
-          <Heading as="h3" size="sm" className="dark:text-slate-100 text-slate-800">
+          <Heading as="h3" size="sm" className="text-slate-100 ">
             {item.title}
           </Heading>
 

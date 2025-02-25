@@ -81,7 +81,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             <span className="block text-gray-50">{renderLetters(slice.primary.first_name, "first")}</span>
             <span className="-mt-[.2em] block text-gray-50">{renderLetters(slice.primary.last_name, "last")}</span>
           </h1>
-          <span className="job-title block dark:text-[#F2A0B6] font-bold text-2xl uppercase tracking-[.2em] opacity-0 md:text-4xl">{slice.primary.tag_line}</span>
+          <span className="job-title block text-[#F2A0B6] font-bold text-2xl uppercase tracking-[.2em] opacity-0 md:text-4xl">{slice.primary.tag_line}</span>
         </div>
         
       </div>

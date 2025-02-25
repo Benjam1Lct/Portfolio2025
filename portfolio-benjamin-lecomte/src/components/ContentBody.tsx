@@ -31,19 +31,31 @@ export default async function ContentBody({page}: {
     return (
         <Bounded as="article">
 
-            <div className="rounded-2xl bg-black/75 px-4 py-10 md:px-8 md:py-20">
-                <Heading as="h1" className="">
-                    {page.data.title}
-                </Heading>
-                <div className="flex gap-4 mt-6 text-[#7D79D9] text-xl font-bold">
-                    {page.tags.map((tag) =>(
-                        <span key={tag}>{tag}</span>
+            <div className="rounded-2xl bg-black/75 px-4 py-10 md:px-8 md:py-12 z-1000 border-2 border-slate-600">
+                <div className="relative rounded max-w-fit">
+                {/* Ombre gauche */}
+                <div className="z-10 absolute left-0 top-0 rounded h-full w-4 bg-gradient-to-r from-white via-white to-transparent pointer-events-none"></div>
+
+                {/* Liste avec scroll horizontal */}
+                <div className="flex gap-4 text-black max-w-fit bg-white px-4 rounded-[10px] py-2 text-xl font-bold overflow-x-auto scrollbar-hide relative">
+                    {page.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
                     ))}
                 </div>
-                <p className="py-4 border-b dark:border-slate-600 border-slate-500 text-xl font-medium dark:text-slate-300 text-slate-600">
+
+                {/* Ombre droite */}
+                <div className="z-10 absolute right-0 top-0 rounded h-full w-4 bg-gradient-to-l from-white via-white to-transparent pointer-events-none"></div>
+                </div>
+
+
+                <Heading as="h1" className="mt-8">
+                    {page.data.title}
+                </Heading>
+                
+                <p className="py-4 mt-4 border-b-2 border-slate-600 text-xl font-medium text-slate-300">
                     {formattedDate}
                 </p>
-                <div className="prose prose-lg prose-invert mt-8 w-full max-w-none md:mt-12 dark:text-slate-300 dark:prose-strong:text-slate-50 dark:prose-headings:text-slate-50 text-slate-700 prose-strong:text-slate-950 prose-headings:text-slate-950">
+                <div className="prose prose-lg prose-invert mt-8 w-full max-w-none md:mt-12 text-slate-300 prose-strong:text-slate-50 prose-headings:text-slate-50 ">
                     <SliceZone slices={page.data.slices} components={components} />
                 </div>
             </div>

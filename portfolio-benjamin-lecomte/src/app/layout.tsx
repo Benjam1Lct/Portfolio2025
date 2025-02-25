@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className="bg-black dark:text-slate-100 text-slate-900 m-0 p-0">
+    <html lang="en" className="bg-black text-slate-100 m-0 p-0">
       <body
         className={clsx(urbanist.className, "absolute min-h-screen w-full")}
       >

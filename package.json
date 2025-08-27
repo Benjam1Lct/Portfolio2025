@@ -13,7 +13,7 @@
     "@prismicio/client": "^7.15.1",
     "@prismicio/next": "^2.0.0",
     "@prismicio/react": "^3.0.0",
-    "@react-three/drei": "^9.121.4",
+    "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.17.12",
     "@types/three": "^0.172.0",
     "@vercel/analytics": "^1.4.1",

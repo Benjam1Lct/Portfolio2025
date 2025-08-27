@@ -77,11 +77,11 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
         <Shapes></Shapes>
         <div className="col-start-1 md:row-start-1">
-          <h1 className="mb-8 text-[calc(2rem+5vw)] font-extrabold leading-none tracking-tighter" aria-label={slice.primary.first_name + " " + slice.primary.last_name}>
-            <span className="block text-gray-50">{renderLetters(slice.primary.first_name, "first")}</span>
-            <span className="-mt-[.2em] block text-gray-50">{renderLetters(slice.primary.last_name, "last")}</span>
+          <h1 className="mb-8 text-[calc(2rem+5vw)] font-extrabold leading-none tracking-tighter">
+            <span className="block text-white font-extrabold">{renderLetters(slice.primary.first_name, "first")}</span>
+            <span className="-mt-[.2em] block text-white font-extrabold">{renderLetters(slice.primary.last_name, "last")}</span>
           </h1>
-          <span className="job-title block text-[#F2A0B6] font-bold text-2xl uppercase tracking-[.2em] opacity-0 md:text-4xl">{slice.primary.tag_line}</span>
+          <span className="job-title block text-white font-light text-2xl uppercase tracking-[.2em] opacity-0 md:text-4xl">{slice.primary.tag_line}</span>
         </div>
         
       </div>

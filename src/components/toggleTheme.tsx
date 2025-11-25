@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function ToggleTheme() {
   type Theme = "light" | "dark" | "system";
@@ -9,6 +9,19 @@ export default function ToggleTheme() {
 
   const [activeTheme, setActiveTheme] = useState<Theme | null>(null);
   const [isMounted, setIsMounted] = useState(false); // Empêcher le rendu au début
+
+  const applySystemTheme = useCallback(() => {
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
+
+  const applyTheme = useCallback((theme: Theme) => {
+    if (theme === "system") {
+      applySystemTheme();
+    } else {
+      document.documentElement.classList.toggle("dark", theme === "dark");
+    }
+  }, [applySystemTheme]);
 
   useEffect(() => {
     const savedTheme = (localStorage.getItem("theme") as Theme) || "system";
@@ -23,7 +36,7 @@ export default function ToggleTheme() {
 
     mediaQuery.addEventListener("change", handleSystemThemeChange);
     return () => mediaQuery.removeEventListener("change", handleSystemThemeChange);
-  }, []);
+  }, [applyTheme, applySystemTheme]);
 
   const handleThemeChange = () => {
     if (!activeTheme) return;
@@ -33,18 +46,6 @@ export default function ToggleTheme() {
     applyTheme(nextTheme);
   };
 
-  const applyTheme = (theme: Theme) => {
-    if (theme === "system") {
-      applySystemTheme();
-    } else {
-      document.documentElement.classList.toggle("dark", theme === "dark");
-    }
-  };
-
-  const applySystemTheme = () => {
-    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    document.documentElement.classList.toggle("dark", isDark);
-  };
 
   if (!isMounted || activeTheme === null) return null; // Attendre avant d'afficher le bouton
 

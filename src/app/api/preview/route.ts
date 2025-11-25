@@ -1,10 +1,7 @@
-import { NextRequest } from "next/server";
-import { redirectToPreviewURL } from "@prismicio/next";
+import { NextResponse } from "next/server";
 
-import { createClient } from "../../../prismicio";
-
-export async function GET(request: NextRequest) {
-  const client = createClient();
-
-  return await redirectToPreviewURL({ client, request });
+// Static-friendly placeholder. Real preview redirects require a Node runtime and
+// can't be used with output: 'export'.
+export function GET() {
+  return new NextResponse(null, { status: 204 });
 }
